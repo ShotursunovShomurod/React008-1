@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img from "../../assets/hero.png";
 
 const Hero = () => {
+  const [theme, setTheme] = useState("dark")
+
+  useEffect(()=>{
+      if(theme == "light"){
+          document.body.classList.remove("dark")
+      }else{  
+          document.body.classList.add("dark")   
+      }
+  },[theme])
+
+  const darkHandler = () =>{
+      document.body.classList.toggle("dark")
+  }
   return (
     <>
-    <div className="mt-32">
+    <div className="pt-32 dark:bg-black text-white">
         <div className="container">
           <div
             id="Hero"
-            className="flex items-center justify-center gap-2 flex-wrap"
+            className=" flex items-center justify-center gap-2 flex-wrap"
           >
             <div className="flex flex-col gap-8 items-start w-[470px]">
               <h2 className="text-5xl font-bold w-4/6">

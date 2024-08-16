@@ -66,8 +66,8 @@ const data = [
 
 
 const laylo = data?.map((el) => (
-    <div key={el.id} className="hover:delay-150	 hover:shadow-lg   cursor-pointer  w-[45%] sm:w-[30%] md:w-[23%] lg:w-[18%] flex gap-[10px] py-3 flex-col items-center">
-        <div className=''>
+    <div key={el.id} className="dark:border hover:delay-150	 hover:shadow-lg   cursor-pointer  w-[45%] sm:w-[30%] md:w-[23%] lg:w-[18%] flex gap-[10px] py-3 flex-col items-center">
+        <div className='flex-1'>
             <img src={el.url} alt="" />
         </div>
         <p className='text-[18px] font-bold'>{el.title}</p>
@@ -76,9 +76,26 @@ const laylo = data?.map((el) => (
 
 
 
+
 const Categoty = () => {
+    
+    const Hero = () => {
+        const [theme, setTheme] = useState("dark")
+      
+        useEffect(()=>{
+            if(theme == "light"){
+                document.body.classList.remove("dark")
+            }else{  
+                document.body.classList.add("dark")   
+            }
+        },[theme])
+      
+        const darkHandler = () =>{
+            document.body.classList.toggle("dark")
+        }
+    }
     return (
-        <div>
+        <div className='dark:bg-black text-white'>
             <div className="container">
                 <div className='flex  items-end mb-8'>
                     <h2 className='font-extrabold text-4xl'>Популярные категории</h2>

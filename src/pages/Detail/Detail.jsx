@@ -40,9 +40,6 @@ useEffect(()=> {
   useEffect(() => {
     axios
       .get(`${API_URL}/products${sellect}`, {
-        params: {
-          limit: 4,
-        },
       })
       .then((res) => {
         settottal(res.data.total),
@@ -166,7 +163,7 @@ useEffect(()=> {
       </div>
       <div className="cards w-full  mt-9 justify-center items-center">
         <p className="text-3xl font-bold">С этим товаром также заказывают</p>
-        <div className="mt-8 flex items-center justify-center gap-3">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           {productItem}
         </div>
       </div>

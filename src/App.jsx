@@ -1,6 +1,3 @@
-
-
-
 import { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
@@ -21,6 +18,8 @@ import Products from './components/Products/Product'; // Updated import
 function App() {
   return (
     <>
+    <div className='duration-200 transition-all'>
+
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -37,6 +36,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
+    </div>
     </>
   );
 }

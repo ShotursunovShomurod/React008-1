@@ -36,7 +36,7 @@ const Header = () => {
     <>
       <div className={`z-50 fixed right-[4%] duration-200 ${isFixed ? "bottom-[10%]" : "bottom-[-40%]"}  dark:text-slate-100 text-slate-900`}>
        <a href="#">
-        <button className="p-2 bg-lime-500 rounded-full">
+        <button className="p-2 bg-lime-500 dark:bg-blue-500 rounded-full">
           <FaArrowCircleUp />
         </button>
         </a> 

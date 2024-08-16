@@ -1,14 +1,30 @@
-import React from 'react'
-import boy from '../../assets/boy.png'
+import React, { useEffect } from 'react'
+import boy from '../../assets/boyy.png'
 import w from '../../assets/w.png'
 import f from '../../assets/f.png'
 import g from '../../assets/gg.png'
+import { useState } from 'react'
 
 
 const Contact = () => {
+
+    const [theme, setTheme] = useState("dark")
+      
+  useEffect(()=>{
+      if(theme == "light"){
+          document.body.classList.remove("dark")
+      }else{  
+          document.body.classList.add("dark")   
+      }
+  },[theme])
+
+  const darkHandler = () =>{
+      document.body.classList.toggle("dark")
+  }
+
   return (
     <>
-        <div className='container flex items-center justify-between'>
+        <div className='dark:bg-black dark:text-white container flex items-center justify-between'>
             <div className='flex flex-col gap-[30px]'>
                 <div>
                     <b className='text-[36px] font-sans'>Контакты</b>
@@ -40,7 +56,7 @@ const Contact = () => {
                     <img src={g} alt="" />
                 </div>
             </div>
-            <div>
+            <div className='dark:bg-black'>
                 <img src={boy} alt="" />
             </div>
         </div>

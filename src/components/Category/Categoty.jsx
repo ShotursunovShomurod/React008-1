@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import rasm1 from '../../assets/rasm1.png'
 import rasm2 from '../../assets/rasm2.png'
 import rasm3 from '../../assets/rasm3.png'
@@ -6,7 +6,6 @@ import rasm4 from '../../assets/rasm4.png'
 import rasm5 from '../../assets/rasm5.png'
 import rasm6 from '../../assets/rasm6.png'
 import rasm7 from '../../assets/rasm7.png'
-import rasm8 from '../../assets/rasm8.png'
 import rasm9 from '../../assets/rasm9.png'
 import rasm10 from '../../assets/rasm10.png'
 
@@ -66,7 +65,7 @@ const data = [
 
 
 const laylo = data?.map((el) => (
-    <div key={el.id} className="dark:border hover:delay-150	 hover:shadow-lg   cursor-pointer  w-[45%] sm:w-[30%] md:w-[23%] lg:w-[18%] flex gap-[10px] py-3 flex-col items-center">
+    <div key={el.id} className="hover:delay-150	 hover:shadow-lg   cursor-pointer  w-[45%] sm:w-[30%] md:w-[23%] lg:w-[18%] flex gap-[10px] py-3 flex-col items-center">
         <div className='flex-1'>
             <img src={el.url} alt="" />
         </div>
@@ -78,22 +77,6 @@ const laylo = data?.map((el) => (
 
 
 const Categoty = () => {
-    
-    const Hero = () => {
-        const [theme, setTheme] = useState("dark")
-      
-        useEffect(()=>{
-            if(theme == "light"){
-                document.body.classList.remove("dark")
-            }else{  
-                document.body.classList.add("dark")   
-            }
-        },[theme])
-      
-        const darkHandler = () =>{
-            document.body.classList.toggle("dark")
-        }
-    }
     return (
         <div className='dark:bg-black text-white'>
             <div className="container">
@@ -101,7 +84,7 @@ const Categoty = () => {
                     <h2 className='font-extrabold text-4xl'>Популярные категории</h2>
                     <p className=''>Все категории -</p>
                 </div>
-                <div className='flex flex-wrap gap-[18.7px] justify-between mt-[61px] mb-[100px]'>{laylo}</div>
+                <div className='flex flex-wrap gap-[18.7px] justify-between mt-[61px]'>{laylo}</div>
             </div>
 
         </div>

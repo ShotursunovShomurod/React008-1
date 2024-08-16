@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
@@ -16,10 +16,22 @@ import Login from './pages/Login/Login';
 import Products from './components/Products/Product'; // Updated import
 
 function App() {
+  const [theme, setTheme] = useState("dark")
+      
+  useEffect(()=>{
+      if(theme == "light"){
+          document.body.classList.remove("dark")
+      }else{  
+          document.body.classList.add("dark")   
+      }
+  },[theme])
+
+  const darkHandler = () =>{
+      document.body.classList.toggle("dark")
+  }
   return (
     <>
     <div className='duration-200 transition-all'>
-
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

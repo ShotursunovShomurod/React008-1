@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import rasm1 from '../../assets/1.png'
 import rasm2 from '../../assets/2.png'
 import rasm3 from '../../assets/3.png'
@@ -7,6 +7,7 @@ import rasm5 from '../../assets/5.png'
 import rasm6 from '../../assets/6.png'
 import rasm7 from '../../assets/7.png'
 import rasm8 from '../../assets/8.png'
+// import { useState } from 'react'
 
 const data = [
   {
@@ -99,10 +100,8 @@ const data = [
 ]
 
 
-
-
 const laylo = data?.map((el) => (
-  <div key={el.id} className="hover:delay-150	 hover:shadow-lg   cursor-pointer  w-[23%]  flex gap-[40px] py-3 flex-col ">
+  <div key={el.id} className=" hover:delay-150	 hover:shadow-lg   cursor-pointer  w-[23%]  flex gap-[40px] py-3 flex-col ">
     <div className=''>
       <img src={el.url} alt="" />
     </div>
@@ -126,7 +125,7 @@ const About = () => {
   return (
     <>
       <div className='container'>
-        <div className='flex flex-wrap w-[100%] justify-between mt-[61px] [100px'>{laylo}</div>
+        <div className=' flex flex-wrap w-[100%] justify-between mt-[61px] [100px'>{laylo}</div>
       </div>
     </>
   )

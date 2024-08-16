@@ -64,6 +64,21 @@ const Product = () => {
       });
   }, [limit, selectedCategory]);
 
+
+  const [theme, setTheme] = useState("dark")
+      
+  useEffect(()=>{
+      if(theme == "light"){
+          document.body.classList.remove("dark")
+      }else{  
+          document.body.classList.add("dark")   
+      }
+  },[theme])
+
+  const darkHandler = () =>{
+      document.body.classList.toggle("dark")
+  }
+  
   const handleClick = () => setLimit((prev) => prev + 1);
 
   const loadingSkeleton = Array(4)
@@ -139,11 +154,11 @@ const Product = () => {
     </option>
   ));
   return (
-    <div id="Product" className="mt-16 container mx-auto px-4">
+    <div id="Product" className="dark:bg-black pt-40 dark:text-white container mx-auto px-4">
       <select
         onChange={(e) => setSelectedCategory(e.target.value)}
         value={selectedCategory}
-        className="mb-4 p-2 border rounded"
+        className="dark:bg-black dark:text-white border-none mb-4 p-2 border rounded"
       >
         <option value="">All</option>
         {categoryOptions}

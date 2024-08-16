@@ -45,6 +45,7 @@ useEffect(()=> {
         settottal(res.data.total),
           setproduct(
             res.data.products.map((produc) => ({ ...produc, count: 0 }))
+            
           );
       })
       .catch((err) => console.log(err));

@@ -12,7 +12,7 @@ const Footer = () => {
     }
 
     return (
-        <div className='bg-slate-100 py-[40px] mt-36'>
+        <div className='bg-slate-100 pt-10 dark:bg-black dark:text-white'>
             <div className="container">
                 <div>
                     <div className=''>

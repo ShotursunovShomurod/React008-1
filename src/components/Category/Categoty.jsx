@@ -79,7 +79,7 @@ const laylo = data?.map((el) => (
 
 const Categoty = () => {
     return (
-        <div className='dark:bg-black text-white'>
+        <div className='dark:bg-black dark:text-white'>
             <div className="container">
                 <div className='flex  items-end mb-8'>
                     <h2 className='font-extrabold text-4xl'>Популярные категории</h2>

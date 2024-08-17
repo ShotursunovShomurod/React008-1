@@ -16,7 +16,7 @@ const Hero = () => {
   }
   return (
     <>
-    <div className="pt-32 dark:bg-black text-white">
+    <div className="pt-32 dark:bg-black dark:text-white">
         <div className="container">
           <div
             id="Hero"

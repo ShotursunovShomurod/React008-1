@@ -14,6 +14,7 @@ import CreateProduct from './pages/Admin/CreateProduct';
 import Manage from './pages/Admin/Manage';
 import Login from './pages/Login/Login';
 import Products from './components/Products/Product'; // Updated import
+import Auth from './pages/auth/Auth';
 
 function App() {
   const [theme, setTheme] = useState("dark")
@@ -42,9 +43,11 @@ function App() {
         <Route path="*" element={<Uslobiya />} />
         <Route path="/products" element={<Products />} />
         <Route path='/product/:id' element={<Detail />} />
-        <Route path="/admin" element={<Admin />}>
+        <Route path='/' element={<Auth/>}>
+        <Route path="admin" element={<Admin />}>
           <Route path="MyProfile" element={<CreateProduct />} />
           <Route path="Subscribes" element={<Manage />} />
+        </Route>
         </Route>
       </Routes>
       <Footer />

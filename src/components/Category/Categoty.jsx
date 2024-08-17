@@ -8,6 +8,7 @@ import rasm6 from '../../assets/rasm6.png'
 import rasm7 from '../../assets/rasm7.png'
 import rasm9 from '../../assets/rasm9.png'
 import rasm10 from '../../assets/rasm10.png'
+import { memo } from 'react'
 
 const data = [
     {
@@ -90,5 +91,4 @@ const Categoty = () => {
         </div>
     )
 }
-
-export default Categoty
+export default memo(Categoty)

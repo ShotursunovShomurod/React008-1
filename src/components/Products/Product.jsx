@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect, memo } from "react";
+// import axios from "axios";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
+import axios from "../../api/Api.jsx";
 
 const API_URL = "https://dummyjson.com";
 
@@ -19,7 +20,7 @@ const Product = () => {
       ? `/products/category/${selectedCategory}`
       : "/products";
     axios
-      .get(`${API_URL}${categoryUrl}`, {
+      .get(`${categoryUrl}`, {
         params: {
           limit: 4 * limit,
         },
@@ -38,7 +39,7 @@ const Product = () => {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/products/category-list`)
+      .get(`/products/category-list`)
       .then((res) => setCategories(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -49,7 +50,7 @@ const Product = () => {
       ? `/products/category/${selectedCategory}`
       : "/products";
     axios
-      .get(`${API_URL}${categoryUrl}`, {
+      .get(`${categoryUrl}`, {
         params: {
           limit: 4 * limit,
         },
@@ -154,7 +155,7 @@ const Product = () => {
     </option>
   ));
   return (
-    <div id="Product" className="dark:bg-black pt-40 dark:text-white container mx-auto px-4">
+    <div id="Product" className="dark:bg-black pt-40 dark:text-white container mx-auto pb-4 px-4">
       <select
         onChange={(e) => setSelectedCategory(e.target.value)}
         value={selectedCategory}
@@ -168,7 +169,7 @@ const Product = () => {
       </div>
       {products.length < totalProducts && (
         <button
-          className="border block mx-auto mt-10 rounded-[20px] py-2 px-2 bg-gray-800 text-white"
+          className="border block mx-auto mt-10 pb-3 rounded-[20px] py-2 px-2 bg-gray-800 text-white"
           onClick={handleClick}
         >
           See more
@@ -178,5 +179,4 @@ const Product = () => {
   );
 };
 
-export default Product;
-
+export default memo(Product)

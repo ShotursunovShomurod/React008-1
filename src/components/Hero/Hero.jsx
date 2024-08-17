@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import img from "../../assets/hero.png";
-
 const Hero = () => {
   const [theme, setTheme] = useState("dark")
 
@@ -57,4 +56,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero)

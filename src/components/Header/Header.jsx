@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import nav from "../../assets/nav.svg";
@@ -87,7 +87,8 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="dark:bg-black dark:text-white container flex items-center justify-between">
+        <div className="dark:bg-black dark:text-white"> 
+        <div className=" container flex items-center justify-between">
           <div className="flex  items-center gap-[100px] mt-[30px]">
             <img src={nav} alt="" />
             <div className="flex items-center gap-3 w-[600px]">
@@ -109,9 +110,10 @@ const Header = () => {
             <FaCloudSun  onClick={() => darkHandler()} className="text-4xl" />
           </div>
         </div>
+        </div>
       </div>
     </>
   );
 };
 
-export default Header;
+export default memo(Header)

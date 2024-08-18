@@ -66,7 +66,7 @@ const data = [
 
 
 const laylo = data?.map((el) => (
-    <div key={el.id} className="hover:delay-150	 hover:shadow-lg   cursor-pointer  w-[45%] sm:w-[30%] md:w-[23%] lg:w-[18%] flex gap-[10px] py-3 flex-col items-center">
+    <div key={el.id} className=" cursor-pointer  w-[45%] sm:w-[30%] md:w-[23%] lg:w-[18%] flex gap-[10px] py-3 flex-col items-center">
         <div className='flex-1'>
             <img src={el.url} alt="" />
         </div>

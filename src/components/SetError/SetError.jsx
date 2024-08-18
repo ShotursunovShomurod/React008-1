@@ -5,7 +5,7 @@ import { Navigate, useNavigate } from 'react-router-dom'
 const SetError = () => {
     const Navigate = useNavigate()
   return (
-    <div className=' dark:bg-black dark:text-white text-center'>
+    <div className=' dark:bg-black dark:text-white text-center pb-5 '>
       <div className='container mx-auto '>
       <div className='w-full flex items-center justify-center'>
         <div className='w-1/2 flex items-center justify-center'>
